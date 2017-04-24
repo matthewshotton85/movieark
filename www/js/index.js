@@ -35,7 +35,7 @@ var genreout = JSON.stringify(genre);
     $('#startLocationButton').on('click', notifyon);
     $('#stopLocationButton').on('click', notify);
     $('#deleteButton').on('click', deleteData);
- 
+   
 	
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
@@ -123,8 +123,8 @@ function storename(){
      var inputEmail = document.getElementById("name");
      localStorage.setItem("name", inputEmail.value);
 	 alert("Your name details have been updated");
-	 alert("Thank you " + inputEmail.value);
-	 var names = localStorage.getItem("name");
+	 var vib4 = 500;
+     var names = localStorage.getItem("name");
 	 var nameout = JSON.stringify(names);
 	 var nameout;
 	 document.getElementById("1").innerHTML = names;
