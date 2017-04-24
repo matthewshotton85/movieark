@@ -126,7 +126,6 @@ function storename(){
 	 alert("Thank you " + inputEmail.value);
 	 var names = localStorage.getItem("name");
 	 var nameout = JSON.stringify(names);
-	 alert(names);
 	 var nameout;
 	 document.getElementById("1").innerHTML = names;
 	 }
