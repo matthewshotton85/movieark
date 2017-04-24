@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<meta charset="UTF-8">
+	
+	<title>Movie Ark Mobile Search</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
+	<script src="js/backendless.min.js" type="text/javascript"></script> 
+    
+    
+    
+</head>
+
+<body>
+    <div data-role="page" id="pageone">
+	
+		
+<div class="heading">
+
+<div data-role="header" style="overflow:hidden;">
+<h5>Search</h5>
+	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
+    <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="search.html">Locate Cinema:</a></li>
+            <li><a href="whatson.html">Whats on:</a></li>
+            <li><a href="aboutme.html">Your Bio:</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /header -->
+
+
+<h1>Movie Ark Search</h1>
+<h2>Search for local cinema:</h2>
+    
+<script>
+ // Cinelist API.
+ 
+ 
+var cineapi = "https://api.cinelist.co.uk/get/times/cinema/";
+var postcode = "9332";
+var output = cineapi + postcode;
+console.log(output);
+
+function storepostcode(){
+
+alert("Getting your results...");
+var postcode = document.getElementById('name').value;
+var output = cineapi + postcode;
+console.log(output);
+$.getJSON(output, function (json) {
+
+    // Set the variables from the results array
+    var cintitle = json.cinemas[0].name;
+	console.log('Title : ', cintitle);
+	var distance = json.cinemas[0].distance;
+    console.log('distance : ', distance);
+	var numberid = json.cinemas[0].id;	    
+	console.log('numberid : ', numberid);
+
+    
+	// Updates fields
+    $('#cintitle').text(cintitle);
+    $('#distance').text(distance);
+    $('#numberid').text(numberid);
+	
+	   // Set the variables from the results array
+    var cintitle1 = json.cinemas[1].name;
+	var distance1 = json.cinemas[1].distance;
+  	var numberid1 = json.cinemas[1].id;	    
+
+
+    
+  // Updates fields
+    $('#cintitle1').text(cintitle1);
+    $('#distance1').text(distance1);
+    $('#numberid1').text(numberid1);
+	
+   // Set the variables from the results array
+    var cintitle2 = json.cinemas[2].name;
+	var distance2 = json.cinemas[2].distance;
+   	var numberid2 = json.cinemas[2].id;	    
+
+
+    
+    // Updates fields
+    $('#cintitle2').text(cintitle2);
+    $('#distance2').text(distance2);
+    $('#numberid2').text(numberid2);
+	
+	// Set the variables from the results array
+    var cintitle3 = json.cinemas[3].name;
+	var distance3 = json.cinemas[3].distance;
+   	var numberid3 = json.cinemas[3].id;	    
+
+
+    
+    // Updates fields
+    $('#cintitle3').text(cintitle3);
+    $('#distance3').text(distance3);
+    $('#numberid3').text(numberid3);
+
+});
+
+	 }
+  
+
+$.getJSON(output, function (json) {
+
+     // listing1 and times
+    var cintitle = json.listings[0].title;
+	console.log('Title : ', cintitle);
+	var cintitle1 = json.listings[0].times;
+	cintitlefinal = cintitle1.toString();
+	console.log(cintitlefinal);
+	
+
+	// Updates fields
+    $('#cintitle').text(cintitle);
+    $('#cintitlefinal').text(cintitlefinal);
+	
+	
+      // listing 2 andtimes
+    var cintitle1 = json.listings[1].title;
+	console.log('Title : ', cintitle);
+	var cintitle2 = json.listings[1].times;
+	cintitlefinal1 = cintitle2.toString();
+
+	
+
+	// Updates fields
+    $('#cintitle1').text(cintitle1);
+    $('#cintitlefinal1').text(cintitlefinal1);
+	
+		
+      // listing 3 andtimes
+    var cintitle2 = json.listings[2].title;
+	console.log('Title : ', cintitle);
+	var cintitle3 = json.listings[2].times;
+	cintitlefinal2 = cintitle3.toString();
+
+
+	// Updates fields
+    $('#cintitle2').text(cintitle2);
+    $('#cintitlefinal2').text(cintitlefinal2);
+	
+	
+	      // listing 4 andtimes
+    var cintitle3 = json.listings[3].title;
+	console.log('Title : ', cintitle);
+	var cintitle4 = json.listings[3].times;
+	cintitlefinal3 = cintitle4.toString();
+
+
+	// Updates fields
+    $('#cintitle3').text(cintitle3);
+    $('#cintitlefinal3').text(cintitlefinal3);
+	
+		
+	      // listing 5 andtimes
+    var cintitle4 = json.listings[4].title;
+	console.log('Title : ', cintitle);
+	var cintitle5 = json.listings[4].times;
+	cintitlefinal4 = cintitle5.toString();
+
+
+	// Updates fields
+    $('#cintitle4').text(cintitle4);
+    $('#cintitlefinal4').text(cintitlefinal4);
+	
+	
+			
+	     // listing 6 andtimes
+    var cintitle5 = json.listings[5].title;
+	console.log('Title : ', cintitle);
+	var cintitle6 = json.listings[5].times;
+	cintitlefinal5 = cintitle6.toString();
+
+
+	// Updates fields
+    $('#cintitle5').text(cintitle5);
+    $('#cintitlefinal5').text(cintitlefinal5);
+	
+	
+
+    // listing 7 andtimes
+    var cintitle6 = json.listings[6].title;
+	console.log('Title : ', cintitle);
+	var cintitle7 = json.listings[6].times;
+	cintitlefinal6 = cintitle7.toString();
+
+
+	// Updates fields
+    $('#cintitle6').text(cintitle6);
+    $('#cintitlefinal6').text(cintitlefinal6);
+	
+	
+	  // listing 8 andtimes
+    var cintitle7 = json.listings[7].title;
+	console.log('Title : ', cintitle);
+	var cintitle8 = json.listings[7].times;
+	cintitlefinal7 = cintitle8.toString();
+
+
+	// Updates fields
+    $('#cintitle7').text(cintitle7);
+    $('#cintitlefinal7').text(cintitlefinal7);
+	
+    // listing 9 andtimes
+    var cintitle8 = json.listings[8].title;
+	console.log('Title : ', cintitle);
+	var cintitle9 = json.listings[8].times;
+	cintitlefinal8 = cintitle9.toString();
+
+
+	// Updates fields
+    $('#cintitle8').text(cintitle8);
+    $('#cintitlefinal8').text(cintitlefinal8);
+	
+	
+	 // listing 10 andtimes
+    var cintitle9 = json.listings[9].title;
+	console.log('Title : ', cintitle);
+	var cintitle10 = json.listings[9].times;
+	cintitlefinal9 = cintitle10.toString();
+
+
+	// Updates fields
+    $('#cintitle9').text(cintitle9);
+    $('#cintitlefinal9').text(cintitlefinal9);
+	
+	
+	 // listing 11 andtimes
+    var cintitle10 = json.listings[10].title;
+	console.log('Title : ', cintitle);
+	var cintitle11 = json.listings[10].times;
+	cintitlefinal10 = cintitle11.toString();
+
+
+	// Updates fields
+    $('#cintitle10').text(cintitle10);
+    $('#cintitlefinal10').text(cintitlefinal10);
+
+
+	// listing 12 andtimes
+    var cintitle11 = json.listings[11].title;
+	console.log('Title : ', cintitle);
+	var cintitle12 = json.listings[11].times;
+	cintitlefinal11 = cintitle12.toString();
+
+
+	// Updates fields
+    $('#cintitle11').text(cintitle11);
+    $('#cintitlefinal11').text(cintitlefinal11);
+
+	// listing 13 andtimes
+    var cintitle12 = json.listings[12].title;
+	console.log('Title : ', cintitle);
+	var cintitle13 = json.listings[12].times;
+	cintitlefinal12 = cintitle13.toString();
+
+
+	// Updates fields
+    $('#cintitle12').text(cintitle12);
+    $('#cintitlefinal12').text(cintitlefinal12);
+
+	
+	
+	});
+
+ 
+  </script>
+    
+
+
+
+
+
+<div data-role="main" class="ui-content">
+      
+<input name="Change" type="name" id="name" placeholder="Enter local cinema ID" />
+			<button onclick="storepostcode()" type="button">Enter Cinema ID for Listings</button></br>
+            
+            <img src="showing.jpg" alt="showing" height="140" width="280">
+            
+			<p id="cintitle"> </p>
+            <p id="cintitlefinal"> </p>
+			
+		
+			<p id="cintitle1"> </p>
+			<p id="cintitlefinal1"> </p>
+			
+			
+			<p id="cintitle2"> </p>
+			<p id="cintitlefinal2"> </p>
+		
+			
+			<p id="cintitle3"> </p>
+			<p id="cintitlefinal3"> </p>
+		
+			
+			<p id="cintitle4"> </p>
+			<p id="cintitlefinal4"> </p>
+			
+			
+			<p id="cintitle5"> </p>
+			<p id="cintitlefinal5"> </p>
+			
+			
+			<p id="cintitle6"> </p>
+			<p id="cintitlefinal6"> </p>
+			
+			
+			<p id="cintitle7"> </p>
+			<p id="cintitlefinal7"> </p>
+			
+			
+			<p id="cintitle8"> </p>
+			<p id="cintitlefinal8"> </p>
+			
+			
+			<p id="cintitle9"> </p>
+			<p id="cintitlefinal9"> </p>
+			
+			<p id="cintitle10"> </p>
+			<p id="cintitlefinal10"> </p>
+			
+			<p id="cintitle11"> </p>
+			<p id="cintitlefinal11"> </p>
+			
+			<p id="cintitle12"> </p>
+			<p id="cintitlefinal12"> </p>
+			
+			<p id="cintitle13"> </p>
+			<p id="cintitlefinal13"> </p>
+			
+        </div>
+
+   
+<div data-role="footer">
+    <h1>(c)2017 All Rights Reserved</h1>
+  </div> 
+
+</body>
+</html>
