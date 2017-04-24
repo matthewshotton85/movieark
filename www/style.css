@@ -1,0 +1,103 @@
+input {
+    border: 3px solid blue;
+    border-radius: 4px;
+	display: block;
+    margin: 0 auto;
+	height: 55px;
+	width: 400px;
+}
+
+
+.ui-dialog {
+	background:#2b2e31;
+}
+
+.ui-page { 
+    background:#2b2e31;
+}
+
+.ui-content { 
+    background:#2b2e31;
+}
+
+footer {
+	width: 
+}
+
+iframe {
+    width: 300px;
+    height: 500px;
+	display: block;
+    margin: 0 auto;
+     
+}
+
+img {
+	display: block;
+    margin: 0 auto;
+	radius: 20px;
+}
+
+
+h1 {
+    text-align: center;
+	color: blue;
+}
+
+h2 {
+    text-align: center;
+	color: lightgreen;
+
+}
+
+h3 {
+	color: black;
+}
+
+h4 {
+	color: blue;
+}
+
+h5 {
+    text-align: right;
+	color: blue;
+}
+
+
+p {
+	color: white;
+	text-align: center;
+}
+
+main {
+    text-align: center;
+}
+
+.nav-glyphish-example .ui-btn { padding-top: 40px !important; }
+.nav-glyphish-example .ui-btn:after { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
+#chat:after { background:  url("../_assets/img/glyphish-icons/09-chat2.png") 50% 50% no-repeat; background-size: 24px 22px; }
+#email:after { background:  url("../_assets/img/glyphish-icons/18-envelope.png") 50% 50% no-repeat; background-size: 24px 16px;  }
+#login:after { background:  url("../_assets/img/glyphish-icons/30-key.png") 50% 50% no-repeat;  background-size: 12px 26px; }
+#beer:after { background:  url("../_assets/img/glyphish-icons/88-beermug.png") 50% 50% no-repeat;  background-size: 22px 27px; }
+#coffee:after { background:  url("../_assets/img/glyphish-icons/100-coffee.png") 50% 50% no-repeat;  background-size: 20px 24px; }
+#skull:after { background:  url("../_assets/img/glyphish-icons/21-skull.png") 50% 50% no-repeat;  background-size: 22px 24px; }
+
+}
+
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 0.75em;
+    border: 0 none;
+    margin-top:35px;
+}
+#body td {
+    padding:15px 30px 15px 10px;
+}
+#body tr td:nth-child(1) {
+    font-weight:bold;
+}
+#address {
+    width:400px;
+}

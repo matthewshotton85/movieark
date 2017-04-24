@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+
+<body>
+
+
+<script>
+
+var name = localStorage.getItem("name");
+var nameout = JSON.stringify(name);
+
+document.write(nameout);
+
+var movie = localStorage.getItem("favmovie");
+var movieout = JSON.stringify(movie);
+
+document.write(movieout);
+
+var genre = localStorage.getItem("genre");
+var genreout = JSON.stringify(genre);
+
+document.write(genreout);
+
+
+
+for(var i in localStorage) {
+    console.log(i + ' = ' + localStorage[i]);
+}
+
+
+
+</script>
+
+<p id="result"> </p>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<meta charset="UTF-8">
+	
+	<title>Movie Ark Mobile Search</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/index.js"></script>
+	<script src="js/backendless.min.js" type="text/javascript"></script> 
+    
+    
+</head>
+
+<body>
+    <div data-role="page" id="pageone">
+	
+		
+<div class="heading">
+
+<div data-role="header" style="overflow:hidden;">
+<h5>Random Movies</h5>
+	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
+    <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="search.html">Locate Cinema:</a></li>
+            <li><a href="whatson.html">Whats on:</a></li>
+            <li><a href="aboutme.html">Your Bio:</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /header -->
+
+
+<h1>Movie Ark Search</h1>
+<h2>Latest cinema releases -TMDB</h2>
+<div class="image">
+ 
+<script>
+
+// API Call
+var tmdbAPI = "https://api.themoviedb.org/3/movie/upcoming?api_key=26f0c7c7eb5e5936a423ce376e305ee6&language=en-US&page=1";
+
+$.getJSON(tmdbAPI, function (json) {
+
+    // Set the variables from the results array
+	//movie1 latest
+    var filmtitle = json.results[0].title;
+	console.log(filmtitle);
+	var description = json.results[0].overview;
+    console.log('Description : ', description);
+	var runtime = json.results[0].vote_average;	    
+	console.log('Runtime : ', runtime);
+	var status = json.results[0].release_date;	    
+	console.log('Status : ', status);
+	var imageurl = json.results[0].poster_path;	 
+	console.log(imageurl);
+	imagepath = "https://image.tmdb.org/t/p/w500"
+    imagefinal = imagepath + imageurl;
+	console.log(imagefinal);
+	document.getElementById('picture').src = imagefinal;
+    
+    // Send data to html id / tags
+    $('#filmtitle').text(filmtitle);
+    $('#description').text(description);
+    $('#runtime').text(runtime);
+	$('#status').text(status);
+	
+	//movie2 latest
+    var filmtitle1 = json.results[1].title;
+	console.log('Title : ', filmtitle);
+	var description1 = json.results[1].overview;
+    console.log('Description : ', description);
+	var runtime1 = json.results[1].vote_average;	    
+	console.log('Runtime : ', runtime);
+	var status1 = json.results[1].release_date;	   
+	console.log('Status : ', status);
+	var imageurl1 = json.results[1].poster_path;	 
+	console.log(imageurl1);
+	imagefinal2 = imagepath + imageurl1;
+	console.log(imagefinal2);
+	document.getElementById('picture1').src = imagefinal2;
+    
+    // Send data to html id / tags
+    $('#filmtitle1').text(filmtitle1);
+    $('#description1').text(description1);
+    $('#runtime1').text(runtime1);
+	$('#status1').text(status1);
+	
+		//movie3 latest
+    var filmtitle2 = json.results[2].title;
+	console.log('Title : ', filmtitle);
+	var description2 = json.results[2].overview;
+    console.log('Description : ', description);
+	var runtime2 = json.results[2].vote_average;	    
+	console.log('Runtime : ', runtime);
+	var status2 = json.results[2].release_date;	   
+	console.log('Status : ', status);
+	var imageurl2 = json.results[2].poster_path;	 
+	console.log(imageurl2);
+	imagefinal3 = imagepath + imageurl2;
+	console.log(imagefinal3);
+	document.getElementById('picture2').src = imagefinal3;
+    
+    // Send data to html id / tags
+    $('#filmtitle2').text(filmtitle2);
+    $('#description2').text(description2);
+    $('#runtime2').text(runtime2);
+	$('#status2').text(status2);
+});    
+    
+</script>
+            <img id="picture" width="250px"; height="300px">
+            <h2>Film Title:</h2>
+            <p id="filmtitle"> </p>
+            <h2>Description:</h2>
+            <p id="description"> </p>
+		    <h2>Rating:</h2>
+            <p id="runtime"></p>
+			<h2>Release Date</h2>
+            <p id="status"></p>
+			
+			<hr><br>
+						
+			<img id="picture1" width="250px"; height="300px">
+            <h2>Film Title:</h2>
+            <p id="filmtitle1"> </p>
+            <h2>Description:</h2>
+            <p id="description1"> </p>
+		    <h2>Rating:</h2>
+            <p id="runtime1"></p>
+			<h2>Release Date</h2>
+            <p id="status1"></p>
+			
+			<hr><br>
+			
+			<img id="picture2" width="250px"; height="300px">
+            <h2>Film Title:</h2>
+            <p id="filmtitle2"> </p>
+            <h2>Description:</h2>
+            <p id="description2"> </p>
+		    <h2>Rating:</h2>
+            <p id="runtime2"></p>
+			<h2>Release Date</h2>
+            <p id="status2"></p>
+			
+			<hr><br>
+			
+			
+
+</div>
+
+  
+<form action="whatson2.html" > 
+  <button type="submit">View More Listings</button>
+</form> <br>
+
+<div data-role="footer">
+    <h1>(c)2017 All Rights Reserved</h1>
+  </div> 
+
+</body>
+</html>
