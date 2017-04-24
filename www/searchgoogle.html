@@ -35,17 +35,21 @@
 
 
 <h1>Movie Ark Search</h1>
-<h2>Please choose an option:</h2>
-    
-<a href="searchpostcode.html">
-  <img src="postcode.png" alt="Go to postcode finder" style="width:100px;height:150px;border:0;">
-</a>
-    
-<a href="searchgoogle.html">
-  <img src="maps.png" alt="Go to google maps" style="width:100px;height:150px;border:0;">
-</a>
+<h2>Here are you nearest cinemas:</h2>
 
-
+<div class="map">
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBc0GnwBiJrsPu9xj6CAekWymEzRSjR3MA&q=nearest_cinema&zoom=10" allowfullscreen>
+</iframe>
+<div>
+    <br>
+    
+<form action="searchpostcode.html" > 
+  <button type="submit">Postcode Search</button>
+</form> <br>
     
 </body>
 </html>

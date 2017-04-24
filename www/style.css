@@ -55,12 +55,20 @@ h3 {
 }
 
 h4 {
-	color: blue;
+	color: yellow;
+    text-align: center;
+    font-size: 22px;
 }
 
 h5 {
-    text-align: right;
+    text-align: center;
 	color: blue;
+}
+
+h6 {
+    text-align: center;
+	color: red;
+    font-size: 20px;
 }
 
 

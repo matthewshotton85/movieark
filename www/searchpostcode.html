@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<meta charset="UTF-8">
+	
+	<title>Movie Ark Mobile Search</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
+	<script src="js/backendless.min.js" type="text/javascript"></script> 
+    
+    
+    
+</head>
+
+<body>
+    <div data-role="page" id="pageone">
+	
+		
+<div class="heading">
+
+<div data-role="header" style="overflow:hidden;">
+<h5>Search</h5>
+	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
+    <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="search.html">Locate Cinema:</a></li>
+            <li><a href="whatson.html">Whats on:</a></li>
+            <li><a href="aboutme.html">Your Bio:</a></li>
+        </ul>
+    </div><!-- /navbar -->
+</div><!-- /header -->
+
+
+<h1>Movie Ark Search</h1>
+<h2>Search for local cinema:</h2>
+    
+<script>
+ // Cinelist API.
+ 
+ 
+var cineapi = "http://api.cinelist.co.uk/search/cinemas/postcode/";
+var postcode = "WR5 1AF";
+var output = cineapi + postcode;
+console.log(output);
+
+function storepostcode(){
+	 
+var postcode = document.getElementById('name').value;
+var output = cineapi + postcode;
+console.log(output);
+$.getJSON(output, function (json) {
+
+    // Set the variables from the results array
+    var cintitle = json.cinemas[0].name;
+	console.log('Title : ', cintitle);
+	var distance = json.cinemas[0].distance;
+    console.log('distance : ', distance);
+	var numberid = json.cinemas[0].id;	    
+	console.log('numberid : ', numberid);
+
+    
+	// Updates fields
+    $('#cintitle').text(cintitle);
+    $('#distance').text(distance);
+    $('#numberid').text(numberid);
+	
+	   // Set the variables from the results array
+    var cintitle1 = json.cinemas[1].name;
+	var distance1 = json.cinemas[1].distance;
+  	var numberid1 = json.cinemas[1].id;	    
+
+
+    
+  // Updates fields
+    $('#cintitle1').text(cintitle1);
+    $('#distance1').text(distance1);
+    $('#numberid1').text(numberid1);
+	
+   // Set the variables from the results array
+    var cintitle2 = json.cinemas[2].name;
+	var distance2 = json.cinemas[2].distance;
+   	var numberid2 = json.cinemas[2].id;	    
+
+
+    
+    // Updates fields
+    $('#cintitle2').text(cintitle2);
+    $('#distance2').text(distance2);
+    $('#numberid2').text(numberid2);
+	
+	// Set the variables from the results array
+    var cintitle3 = json.cinemas[3].name;
+	var distance3 = json.cinemas[3].distance;
+   	var numberid3 = json.cinemas[3].id;	    
+
+
+    
+    // Updates fields
+    $('#cintitle3').text(cintitle3);
+    $('#distance3').text(distance3);
+    $('#numberid3').text(numberid3);
+
+});
+
+	 }
+  
+
+$.getJSON(output, function (json) {
+
+     // Set the variables from the results array
+    var cintitle = json.cinemas[0].name;
+	console.log('Title : ', cintitle);
+	var distance = json.cinemas[0].distance;
+    console.log('distance : ', distance);
+	var numberid = json.cinemas[0].id;	    
+	console.log('numberid : ', numberid);
+
+    
+	// Updates fields
+    $('#cintitle').text(cintitle);
+    $('#distance').text(distance);
+    $('#numberid').text(numberid);
+	
+	  
+	// Set the variables from the results array
+    var cintitle1 = json.cinemas[1].name;
+	var distance1 = json.cinemas[1].distance;
+  	var numberid1 = json.cinemas[1].id;	    
+
+    
+    // Updates fields
+    $('#cintitle1').text(cintitle1);
+    $('#distance1').text(distance1);
+    $('#numberid1').text(numberid1);
+	
+    // Set the variables from the results array
+    var cintitle2 = json.cinemas[2].name;
+	var distance2 = json.cinemas[2].distance;
+   	var numberid2 = json.cinemas[2].id;	    
+
+    // Updates fields
+    $('#cintitle2').text(cintitle2);
+    $('#distance2').text(distance2);
+    $('#numberid2').text(numberid2);
+	
+	
+	// Set the variables from the results array
+    var cintitle3 = json.cinemas[3].name;
+	var distance3 = json.cinemas[3].distance;
+   	var numberid3 = json.cinemas[3].id;	    
+
+
+    
+    // Updates fields
+    $('#cintitle3').text(cintitle3);
+    $('#distance3').text(distance3);
+    $('#numberid3').text(numberid3);
+  
+  
+  
+  
+});
+
+ 
+  </script>
+    
+
+
+
+
+
+<div data-role="main" class="ui-content">
+      
+<input name="Change" type="name" id="name" placeholder="Enter valid postcode" />
+			<button onclick="storepostcode()" type="button">Find me a cinema (UK)</button></br>
+            
+            <img src="search1.png" alt="popcorn" height="140" width="280">
+            <h4>Your Nearest Cinema:</h4>
+            <p id="cintitle"> </p>
+            <h2>Distance Away (Miles):</h2>
+            <p id="distance"> </p>
+			<h2>ID Number:</h2>
+			<p id="numberid"> </p>
+			<hr>
+			<h6>Other Cinemas We Found:</h6>
+			<hr>
+			
+			<h2>Name</h2>
+            <p id="cintitle1"> </p>
+            <h2>Distance Away (Miles):</h2>
+            <p id="distance1"> </p>
+			<h2>ID Number:</h2>
+			<p id="numberid1"> </p>
+			
+			<hr>
+			
+			<h2>Name</h2>
+            <p id="cintitle2"> </p>
+            <h2>Distance Away (Miles):</h2>
+            <p id="distance2"> </p>
+			<h2>ID Number:</h2>
+			<p id="numberid2"> </p>
+			
+			<hr>
+			
+			<h2>Name</h2>
+            <p id="cintitle3"> </p>
+            <h2>Distance Away (Miles):</h2>
+            <p id="distance3"> </p>
+			<h2>ID Number:</h2>
+			<p id="numberid3"> </p>
+			
+			<hr>
+    
+            <form action="searchgoogle.html" > 
+            <button type="submit">Map Search</button>
+            </form> <br>
+			
+        </div>
+
+   
+<div data-role="footer">
+    <h1>(c)2017 All Rights Reserved</h1>
+  </div> 
+
+</body>
+</html>
