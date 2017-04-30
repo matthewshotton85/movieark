@@ -3,30 +3,33 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta charset="UTF-8">
-	
+	<!-- Title of Application -->
 	<title>Movie Ark Mobile Search</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- Stylesheet Location -->
 	<link rel="stylesheet" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  	<script src="js/backendless.min.js" type="text/javascript"></script> 
+	<!-- Links to JS File -->
 	<script src="js/index.js"></script>
-	<script src="js/index2.js"></script>
+
     
 </head>
 
 <body>
+
     <div data-role="page" id="pageone">
 	
-		
-<div class="heading">
+		<div class="heading">
 
 <div data-role="header" style="overflow:hidden;">
 <h5>About me</h5>
+	<!-- Navigation Structure -->
 	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
     <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
     <div data-role="navbar">
         <ul>
+		<!-- Navigation Links -->
             <li><a href="search.html">Locate Cinema:</a></li>
             <li><a href="whatson.html">Whats on:</a></li>
             <li><a href="aboutme.html">Your Bio:</a></li>
@@ -34,7 +37,7 @@
     </div><!-- /navbar -->
 </div><!-- /header -->
 
-
+<!-- Main Content Area -->
 <h1>Movie Ark Search</h1>
 <h2>Your Bio:</h2>
 <div class="image">
@@ -42,27 +45,29 @@
 <p>Hello </p> 
 <p>Your biography information is currently stored below:</p>
 
+<!--Image Link to page for user to edit-->
 <a href="edit.html">
 <img border="0" alt="edit" src="edit.png" width="100" height="40">
 </a>
 
 
   <div data-role="main" class="ui-content">
-
+  
+<!-- Retrieves userdata name from JS file -->
   <h2>Your name: </h2> <p id="1"> </p> <script type="text/javascript" style="display: none">
       var getnamestring = localStorage.getItem("name");
 	  var nameout = JSON.stringify(getnamestring);
        document.getElementById("1").innerHTML = getnamestring;
 	</script> 
     
-
+<!-- Retrieves userdata fav movie from JS file -->
   <h2>Your favourite movie: </h2> <p id="2"> </p> <script type="text/javascript" style="display: none">
       var movie = localStorage.getItem("favmovie");
 	  var movieout = JSON.stringify(movie);
        document.getElementById("2").innerHTML = movie;
 	</script> 
     
- 
+<!-- Retrieves userdata fav genre from JS file --> 
    <h2>Your favourite genre: </h2> <p id="3"> </p> <script type="text/javascript" style="display: none">
      var genre = localStorage.getItem("genre");
 	 var genreout = JSON.stringify(genre);
@@ -71,14 +76,16 @@
 
 
   
-
-
-
+<!-- Popup window -->
 <a href="#myPopup" data-rel="popup" class="ui-btn ui-icon-info ui-btn-icon-left">Help</a>
 
+<!--Text displayed within pop up window-->
  <div data-role="popup" id="myPopup">
       <h3>To use this application please ensure that you enable location services.</h3>
         </div>
+
+<!-- Footer Div -->
+
 <div data-role="footer">
     <h1>(c)2017 All Rights Reserved</h1>
   </div> 

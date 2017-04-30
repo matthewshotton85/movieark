@@ -3,15 +3,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta charset="UTF-8">
-	
+	<!-- Title of Application -->
 	<title>Movie Ark Mobile Search</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- Stylesheet Location -->
 	<link rel="stylesheet" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- Links to JS File -->
     <script src="js/index.js"></script>
-	<script src="js/backendless.min.js" type="text/javascript"></script> 
-    
+	    
 </head>
 
 <body>
@@ -22,18 +23,22 @@
 
 <div data-role="header" style="overflow:hidden;">
 <h5>Cinema Locator</h5>
-	<a href="index.html" data-icon="gear" class="ui-btn-left">Home</a>
-    <a href="settings.html" data-icon="home" class="ui-btn-right">Settings</a>
+	<!-- Navigation Structure -->
+	<a href="index.html" data-icon="gear" class="ui-btn-left">Home</a> 	<!-- data-icon gear = settings icon -->
+    <a href="settings.html" data-icon="home" class="ui-btn-right">Settings</a> <!-- data-icon home = home icon -->
     <div data-role="navbar">
         <ul>
+		<!-- Navigation Links -->
             <li><a href="search.html">Locate Cinema:</a></li>
             <li><a href="whatson.html">Whats on:</a></li>
             <li><a href="aboutme.html">Your Bio:</a></li>
         </ul>
     </div><!-- /navbar -->
-</div><!-- /header -->
+</div>
 
+<!-- /header -->
 
+<!-- Main Content Area -->
 <h1>Movie Ark Search</h1>
 <h2>Whats on at your cinema!</h2>
 <div class="image">
@@ -43,12 +48,14 @@ the latest releases available using our database</p>
 <p>To begin, please click on the start exploring button below to browse through the app </p>
 </div>
 
- 
+ <!-- Popup window -->
 <a href="#myPopup" data-rel="popup" class="ui-btn ui-icon-info ui-btn-icon-left">Help</a>
 
  <div data-role="popup" id="myPopup">
       <h3>To use this application please ensure that you enable location services in settings.</h3>
         </div>
+		
+<!-- Footer Div -->
 <div data-role="footer">
     <h1>(c)2017 All Rights Reserved</h1>
   </div> 

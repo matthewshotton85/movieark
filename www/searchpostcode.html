@@ -3,15 +3,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta charset="UTF-8">
-	
+	<!-- Title of Application -->
 	<title>Movie Ark Mobile Search</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- Stylesheet Location -->
 	<link rel="stylesheet" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- Links to JS File -->
     <script src="js/index.js"></script>
-	<script src="js/backendless.min.js" type="text/javascript"></script> 
-    
+   
     
     
 </head>
@@ -24,35 +25,40 @@
 
 <div data-role="header" style="overflow:hidden;">
 <h5>Search</h5>
+<!-- Navigation Structure -->
 	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
     <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
     <div data-role="navbar">
         <ul>
+			<!-- Navigation Links -->
             <li><a href="search.html">Locate Cinema:</a></li>
             <li><a href="whatson.html">Whats on:</a></li>
             <li><a href="aboutme.html">Your Bio:</a></li>
         </ul>
     </div><!-- /navbar -->
-</div><!-- /header -->
+</div>
 
+<!-- /header -->
 
+<!-- Main Content Area -->
 <h1>Movie Ark Search</h1>
 <h2>Search for local cinema:</h2>
     
 <script>
  // Cinelist API.
  
- 
+ //Variables
 var cineapi = "http://api.cinelist.co.uk/search/cinemas/postcode/";
 var postcode = "WR5 1AF";
 var output = cineapi + postcode;
 console.log(output);
-
+ //Gets user input
 function storepostcode(){
-
+ //Alerts user
 alert("Getting your results...");
 var postcode = document.getElementById('name').value;
-var output = cineapi + postcode;
+//Combines api url and postcode to fetch result
+var output = cineapi + postcode; 
 console.log(output);
 $.getJSON(output, function (json) {
 
@@ -65,7 +71,7 @@ $.getJSON(output, function (json) {
 	console.log('numberid : ', numberid);
 
     
-	// Updates fields
+	// Updates fields in HTML
     $('#cintitle').text(cintitle);
     $('#distance').text(distance);
     $('#numberid').text(numberid);
@@ -77,7 +83,7 @@ $.getJSON(output, function (json) {
 
 
     
-  // Updates fields
+  // Updates fields in HTML
     $('#cintitle1').text(cintitle1);
     $('#distance1').text(distance1);
     $('#numberid1').text(numberid1);
@@ -89,7 +95,7 @@ $.getJSON(output, function (json) {
 
 
     
-    // Updates fields
+    // Updates fields in HTML
     $('#cintitle2').text(cintitle2);
     $('#distance2').text(distance2);
     $('#numberid2').text(numberid2);
@@ -101,7 +107,7 @@ $.getJSON(output, function (json) {
 
 
     
-    // Updates fields
+    // Updates fields in HTML
     $('#cintitle3').text(cintitle3);
     $('#distance3').text(distance3);
     $('#numberid3').text(numberid3);
@@ -110,7 +116,7 @@ $.getJSON(output, function (json) {
 
 	 }
   
-
+//Example location in Worcester
 $.getJSON(output, function (json) {
 
      // Set the variables from the results array
@@ -171,15 +177,12 @@ $.getJSON(output, function (json) {
   </script>
     
 
-
-
-
-
 <div data-role="main" class="ui-content">
-      
+ <!-- Input area for user to get cinema by postcode -->     
 <input name="Change" type="name" id="name" placeholder="Enter your postcode" />
 			<button onclick="storepostcode()" type="button">Find me a cinema (UK)</button></br>
             
+			<!-- Displayed results in DIV -->
             <img src="search1.png" alt="popcorn" height="140" width="280">
             <h4>Your Nearest Cinema:</h4>
             <p id="cintitle"> </p>
@@ -191,40 +194,41 @@ $.getJSON(output, function (json) {
 			<h6>Other Cinemas We Found:</h6>
 			<hr>
 			
+			<!-- Displayed results in DIV -->
 			<h2>Name</h2>
             <p id="cintitle1"> </p>
             <h2>Distance Away (Miles):</h2>
             <p id="distance1"> </p>
 			<h2>ID Number:</h2>
 			<p id="numberid1"> </p>
-			
 			<hr>
 			
+			<!-- Displayed results in DIV -->
 			<h2>Name</h2>
             <p id="cintitle2"> </p>
             <h2>Distance Away (Miles):</h2>
             <p id="distance2"> </p>
 			<h2>ID Number:</h2>
 			<p id="numberid2"> </p>
-			
 			<hr>
 			
+			<!-- Displayed results in DIV -->
 			<h2>Name</h2>
             <p id="cintitle3"> </p>
             <h2>Distance Away (Miles):</h2>
             <p id="distance3"> </p>
 			<h2>ID Number:</h2>
 			<p id="numberid3"> </p>
-			
 			<hr>
     
+			<!-- Form link allowing users to search using Google Maps -->
             <form action="searchgoogle.html" > 
             <button type="submit">Map Search</button>
             </form> <br>
 			
         </div>
 
-   
+  <!-- Footer Div --> 
 <div data-role="footer">
     <h1>(c)2017 All Rights Reserved</h1>
   </div> 

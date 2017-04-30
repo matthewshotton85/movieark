@@ -3,15 +3,16 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta charset="UTF-8">
-	
+	<!-- Title of Application -->
 	<title>Movie Ark Mobile Search</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- Stylesheet Location -->
 	<link rel="stylesheet" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<!-- Links to JS File -->
     <script src="js/index.js"></script>
-	<script src="js/backendless.min.js" type="text/javascript"></script> 
-    
+  
     
     
 </head>
@@ -24,18 +25,22 @@
 
 <div data-role="header" style="overflow:hidden;">
 <h5>Search</h5>
+<!-- Navigation Structure -->
 	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
     <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
     <div data-role="navbar">
         <ul>
+			<!-- Navigation Links -->
             <li><a href="search.html">Locate Cinema:</a></li>
             <li><a href="whatson.html">Whats on:</a></li>
             <li><a href="aboutme.html">Your Bio:</a></li>
         </ul>
     </div><!-- /navbar -->
-</div><!-- /header -->
+</div>
 
+<!-- /header -->
 
+<!-- Main Content Area -->
 <h1>Movie Ark Search</h1>
 <h2>Get cinema movie listings:</h2>
     
@@ -56,7 +61,7 @@ var output = cineapi + postcode;
 console.log(output);
 $.getJSON(output, function (json) {
 
-     // listing1 and times
+		// listing1 and times
     var cintitle = json.listings[0].title;
 	console.log('Title : ', cintitle);
 	var cintitle1 = json.listings[0].times;
@@ -69,7 +74,7 @@ $.getJSON(output, function (json) {
     $('#cintitlefinal').text(cintitlefinal);
 	
 	
-      // listing 2 andtimes
+		// listing 2 andtimes
     var cintitle1 = json.listings[1].title;
 	console.log('Title : ', cintitle);
 	var cintitle2 = json.listings[1].times;
@@ -82,7 +87,7 @@ $.getJSON(output, function (json) {
     $('#cintitlefinal1').text(cintitlefinal1);
 	
 		
-      // listing 3 andtimes
+		// listing 3 andtimes
     var cintitle2 = json.listings[2].title;
 	console.log('Title : ', cintitle);
 	var cintitle3 = json.listings[2].times;
@@ -94,7 +99,7 @@ $.getJSON(output, function (json) {
     $('#cintitlefinal2').text(cintitlefinal2);
 	
 	
-	      // listing 4 andtimes
+		// listing 4 andtimes
     var cintitle3 = json.listings[3].title;
 	console.log('Title : ', cintitle);
 	var cintitle4 = json.listings[3].times;
@@ -222,19 +227,16 @@ $.getJSON(output, function (json) {
   </script>
     
 
-
-
-
-
 <div data-role="main" class="ui-content">
 
 
-      
+ <!-- Input area to enter cinema id-->        
 <input name="Change" type="name" id="name" placeholder="Enter local cinema ID for listings" />
 			<button onclick="storepostcode()" type="button">Confirm Cinema ID for todays listings</button></br>
             <p>Tip: Please run <a href="searchpostcode.html"><nobr>Postcode Finder </nobr></a> to get local cinema IDs by postcode</p>
             <img src="showing.jpg" alt="showing" height="140" width="280">
             
+			<!-- Divs to display content of movie listings -->
 			<p id="cintitle"> </p>
             <p id="cintitlefinal"> </p>
 			
@@ -288,7 +290,7 @@ $.getJSON(output, function (json) {
 			
         </div>
 
-   
+  <!-- Footer Div --> 
 <div data-role="footer">
     <h1>(c)2017 All Rights Reserved</h1>
   </div> 

@@ -3,13 +3,15 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
 	<meta charset="UTF-8">
-	
+	<!-- Title of Application -->
 	<title>Movie Ark Mobile Search</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- Stylesheet Location -->
 	<link rel="stylesheet" href="style.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<!-- Links to JS File -->
     <script src="js/index.js"></script>
 	<script src="js/backendless.min.js" type="text/javascript"></script> 
     
@@ -24,6 +26,7 @@
 
 <div data-role="header" style="overflow:hidden;">
 <h5>New at cinemas</h5>
+<!-- Navigation Structure -->
 	<a href="index.html" data-icon="home" class="ui-btn-left">Home</a>
     <a href="settings.html" data-icon="gear" class="ui-btn-right">Settings</a>
     <div data-role="navbar">
@@ -35,7 +38,7 @@
     </div><!-- /navbar -->
 </div><!-- /header -->
 
-
+<!-- Main Content Area -->
 <h1>Movie Ark Search</h1>
 <h2>Latest cinema releases -TMDB</h2>
 <div class="image">
@@ -47,21 +50,28 @@ var tmdbAPI = "https://api.themoviedb.org/3/movie/upcoming?api_key=26f0c7c7eb5e5
 
 $.getJSON(tmdbAPI, function (json) {
 
-    // Set the variables from the results array
-	//movie1 latest
+    // Sets the variables from the results array
+	//gets title of movie
     var filmtitle = json.results[0].title;
 	console.log(filmtitle);
+	//gets description of movie
 	var description = json.results[0].overview;
     console.log('Description : ', description);
+	//gets vote of movie
 	var runtime = json.results[0].vote_average;	    
 	console.log('Runtime : ', runtime);
+	//gets result of movie
 	var status = json.results[0].release_date;	    
 	console.log('Status : ', status);
+	//gets image of movie
 	var imageurl = json.results[0].poster_path;	 
 	console.log(imageurl);
-	imagepath = "https://image.tmdb.org/t/p/w500"
+	//gets image of movie
+	imagepath = "https://image.tmdb.org/t/p/w500";
+	//combines with individual image url from API
     imagefinal = imagepath + imageurl;
 	console.log(imagefinal);
+	//outputs image to div
 	document.getElementById('picture').src = imagefinal;
     
     // Send data to html id / tags
@@ -114,6 +124,8 @@ $.getJSON(tmdbAPI, function (json) {
 });    
     
 </script>
+<!-- Divs to show content from api -->
+
             <img id="picture" width="250px"; height="300px">
             <h2>Film Title:</h2>
             <p id="filmtitle"> </p>
@@ -154,7 +166,8 @@ $.getJSON(tmdbAPI, function (json) {
 
 </div>
 
-  
+ <!-- Allows user to navigate to next page -->
+
 <form action="whatson2.html" > 
   <button type="submit">View More Listings</button>
 </form> <br>

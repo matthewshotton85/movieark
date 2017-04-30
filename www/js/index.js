@@ -1,5 +1,7 @@
+//Variable for location data
 var watchID;
 
+//Location Settings
 var locationOptions = { 
 	maximumAge: 10000, 
 	timeout: 6000, 
@@ -14,15 +16,15 @@ $(document).on('pageinit', function() {
     console.log(navigator.notification);
 }
 
- 	
+//Gets local storage item "name" to display in bio
 var getnamestring = localStorage.getItem("name");
 var nameout = JSON.stringify(getnamestring);
 
-
+//Gets local storage item "favmovie" to display in bio
 var movie = localStorage.getItem("favmovie");
 var movieout = JSON.stringify(movie);
 
-
+//Gets local storage item "genre" to display in bio
 var genre = localStorage.getItem("genre");
 var genreout = JSON.stringify(genre);
 
@@ -91,23 +93,25 @@ function failPosition(error) {
 	
 }
 
-
+//Vibrates device once only
 function vibration() {
    var time = 1000;
    navigator.vibrate(time);
 }
 
+//Vibrates device twice
 function vibration2() {
    var pattern = [1000, 1000, 1000, 1000];
    navigator.vibrate(pattern);
 }
 
-
+//Informs user that location services has started
 function notifyon() {
   alert("You have started local services");
 	
 }
 
+//Informs user that location services has stopped
 function notify() {
   alert("You have stopped local services");
 }
@@ -117,20 +121,19 @@ for(var i in localStorage) {
     console.log(i + ' = ' + localStorage[i]);
 }
 
-
+//When user enters name, it stores entered data in local storage. Function also fetches the new value and converts to string to dislay in bio
 function storename(){
 	 
-     var inputEmail = document.getElementById("name");
-     localStorage.setItem("name", inputEmail.value);
+     var inputName = document.getElementById("name");
+     localStorage.setItem("name", inputName.value);
 	 alert("Your name details have been updated");
-	 var vib4 = 500;
-     var names = localStorage.getItem("name");
+	 var names = localStorage.getItem("name");
 	 var nameout = JSON.stringify(names);
 	 var nameout;
 	 document.getElementById("1").innerHTML = names;
 	 }
 
-   
+//When user enters fav movie, it stores entered data in local storage. Function also fetches the new value and converts to string to dislay in bio   
 function storemov(){
 	 
      var inputMovie= document.getElementById("movie");
@@ -144,7 +147,7 @@ function storemov(){
 	 document.getElementById("2").innerHTML = movnames;
 	 
     }
-	
+//When user enters fav genre, it stores entered data in local storage. Function also fetches the new value and converts to string to dislay in bio 	
 function storegenre(){
 	 
      var inputGenre = document.getElementById("genre");
@@ -156,7 +159,8 @@ function storegenre(){
 	 document.getElementById("3").innerHTML = gennames;
 	 alert(gennames);
 	 }
-	
+
+//Used to delete user data via settings menu. Clears all local storage values on mobile device 	 
 function deleteData() {
   localStorage.clear();
   alert("Your user data has been deleted");
