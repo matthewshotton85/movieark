@@ -127,6 +127,7 @@ function storename(){
      var inputName = document.getElementById("name");
      localStorage.setItem("name", inputName.value);
 	 alert("Your name details have been updated");
+	 alert("Thank you " + inputName.value);
 	 var names = localStorage.getItem("name");
 	 var nameout = JSON.stringify(names);
 	 var nameout;
