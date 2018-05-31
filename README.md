@@ -12,6 +12,6 @@ Design features include:
 - Abiltiy for users to view the latest cinema releases and ratings using TMDb API.
 - Use of Google Maps to plot nearby cinema locations visually. 
 
-![Movie Ark Home](http://mattshotton.com/external/movieark.png)
-![Movie Ark Search](http://mattshotton.com/external/movieark2.png)
-![Movie Ark TMDb API](http://mattshotton.com/external/movieark3.png)
+![Movie Ark Home](http://mattshotton.com/external/moviearksm.png)
+![Movie Ark Search](http://mattshotton.com/external/movieark2sm.png)
+![Movie Ark TMDb API](http://mattshotton.com/external/movieark3sm.png)
