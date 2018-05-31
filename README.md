@@ -9,7 +9,7 @@ Created using Intel XDK and Cordova as part of a Year 2 Module in Mobile Applica
 Design features include:
 
 - Ability for users to find local cinemas in their area using the CineList API.
-- Abiltiy for users to view the latest cinema releases and ratings using TMDb API.
+- Ability for users to view the latest cinema releases and ratings using TMDb API.
 - Use of Google Maps to plot nearby cinema locations visually. 
 
 ![Movie Ark Home](http://mattshotton.com/external/moviearksm.png)
