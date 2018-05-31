@@ -15,4 +15,3 @@ Design features include:
 ![Movie Ark Home](http://mattshotton.com/external/moviearksm.png)
 ![Movie Ark Search](http://mattshotton.com/external/movieark2sm.png)
 ![Google Maps](http://mattshotton.com/external/movieark4sm.png)
-![Movie Ark TMDb API](http://mattshotton.com/external/movieark3sm.png)
